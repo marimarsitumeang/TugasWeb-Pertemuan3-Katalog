@@ -1,0 +1,109 @@
+:root {
+            --bg-color: #Fdfbf7;
+            --text-color: #333333;
+            --accent-color: #d1bfae;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--text-color);
+        }
+
+        /* REQ 7: Penggunaan clamp() untuk typography responsif */
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 2px;
+            /* Ukuran font akan merespon layar dari 1.5rem hingga 2.5rem */
+            font-size: clamp(1.5rem, 3vw, 2.5rem); 
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            /* Font judul hero section membesar secara fluid */
+            font-size: clamp(2rem, 5vw, 4.5rem); 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        /* Kustomisasi Navbar */
+        .navbar {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid #eaeaea;
+        }
+        .nav-link {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #555;
+            margin: 0 10px;
+        }
+        
+        /* Kustomisasi Hero Section meniru gambar */
+        .hero-section {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .btn-shop {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-shop:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Kustomisasi Card Produk (Req 4) */
+        .product-card {
+            border: none;
+            background-color: transparent;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        /* REQ 6: Responsive Images di-handle class .img-fluid Bootstrap, ini tambahan gaya */
+        .product-card img {
+            object-fit: cover;
+            height: 350px;
+            width: 100%;
+        }
+        .product-info {
+            text-align: center;
+            padding: 15px 0;
+        }
+        .product-price {
+            font-weight: 600;
+            color: #a38771;
+        }
